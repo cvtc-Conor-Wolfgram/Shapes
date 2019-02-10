@@ -2,28 +2,43 @@ package org.cvtc.shapes.test;
 
 import static org.junit.Assert.*;
 
+import org.cvtc.shapes.Sphere;
 import org.junit.Test;
 
 public class SphereTest {
 
-	@Test
+	//Test objects
+	Sphere normalSphere = new Sphere(1.0f);
+	Sphere negativeSphere = new Sphere(-1.0f);
+	Sphere zeroSphere = new Sphere(0.0f);
+	
+	@Test //Testing Surface Area
 	public void testSurfaceArea() {
-		fail("Not yet implemented");
+		assertEquals(12.57f, normalSphere.surfaceArea(), 0.01);
+		assertEquals(0.0f, negativeSphere.surfaceArea(), 0.0);
+		assertEquals(0.0f, zeroSphere.surfaceArea(), 0.0);
 	}
-
-	@Test
+ 
+	@Test //Testing Volume
 	public void testVolume() {
-		fail("Not yet implemented");
+		assertEquals(4.19f, normalSphere.volume(), 0.01);
+		assertEquals(0.0f, negativeSphere.volume(), 0.0);
+		assertEquals(0.0f, zeroSphere.volume(), 0.0);
 	}
 
-	@Test
+	@Test //Testing constructor and logic
 	public void testSphereFloat() {
-		fail("Not yet implemented");
+		assertEquals(1.0f, normalSphere.getRadius(), 0.0);
+
+		assertEquals(0.0f, negativeSphere.getRadius(), 0.0);
+		
+		assertEquals(0.0f, zeroSphere.getRadius(), 0.0);
+
 	}
 
-	@Test
+	@Test //Testing getRadius
 	public void testGetRadius() {
-		fail("Not yet implemented");
+		assertEquals(1.0f, normalSphere.getRadius(), 0.0);
 	}
 
 }
