@@ -29,8 +29,14 @@ public class CylinderTest {
 	@Test //Testing constructor and logic
 	public void testCylinderFloatFloat() {
 		assertEquals(1.0f, normalCylinder.getRadius(), 0.0);
+		assertEquals(1.0f, normalCylinder.getHeight(), 0.0);
+
+	
+		assertEquals(0.0f, negativeCylinder.getRadius(), 0.0);
 		assertEquals(0.0f, negativeCylinder.getHeight(), 0.0);
-		assertEquals(0.0f, zeroCylinder.getHeight(), 0.0);
+		
+		assertEquals(0.0f, zeroCylinder.getRadius(), 0.0);
+		assertEquals(0.0f, zeroCylinder.getHeight(), 0.0);;
 		
 	}
 

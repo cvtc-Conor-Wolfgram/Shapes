@@ -22,8 +22,8 @@ public class CuboidTest {
 	@Test //Testing Volume
 	public void testVolume() {
 		assertEquals(1.0f, normalCuboid.volume(), 0.0);
-		assertEquals(0.0f, negativeCuboid.surfaceArea(), 0.0);
-		assertEquals(0.0f, zeroCuboid.surfaceArea(), 0.0);
+		assertEquals(0.0f, negativeCuboid.volume(), 0.0);
+		assertEquals(0.0f, zeroCuboid.volume(), 0.0);
 	}
 
 	@Test //Testing constructor and logic
