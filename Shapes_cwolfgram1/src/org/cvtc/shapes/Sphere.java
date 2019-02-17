@@ -9,18 +9,16 @@ import javax.swing.JOptionPane;
  * @author Conor
  *
  */
-public class Sphere extends Shape {
+public class Sphere extends Shape implements Renderer {
 	
 	//Sphere's radius
 	private float radius;
 	
-	//Default constructor setting radius to 0
-	public Sphere() {
-		this.radius = 0;
-	}
 	
 	//Constructor setting radius >= 0 to passed in value
-	public Sphere(float radius) {
+	public Sphere(MessageBox messageBox, float radius) {
+		
+		super(messageBox);
 		
 		if(radius >= 0) {
 			this.radius = radius;
@@ -55,14 +53,13 @@ public class Sphere extends Shape {
 	public float volume() {
 		return (float) ((4.0 / 3.0) * Math.PI * Math.pow(radius, 3));
 	}
-	
-	@Override
-	//Displays sphere stats including surface area and volume in message panel
-	public void render() {
-		JOptionPane renderMessage = new JOptionPane();
-		
-		JOptionPane.showMessageDialog(renderMessage, "Sphere Dimensions: \n Radius: " + radius + "\n Surface Area: " + surfaceArea() + "\n Volume: " + volume());
 
+	// Renders dimensions via the MessageBox class in the Super Constructor
+	@Override
+	public void render() {
+		super.getMessageBox().show("Sphere Dimensions: \n Radius: " + radius + "\n Surface Area: " + surfaceArea() + "\n Volume: " + volume(), "Sphere Dimensions");
+		
 	}
+	
 
 }

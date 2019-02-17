@@ -9,20 +9,18 @@ import javax.swing.JOptionPane;
  * @author Conor
  *
  */
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements Renderer {
 	//Cylinder radius
 	private float radius;
 	//Cylinder height
 	private float height;
 	
-	//Default constructor setting values to 0
-	public Cylinder() {
-		this.radius = 0;
-		this.height = 0;
-	}
+
 	
 	//Constructor setting variables to passed in values above 0
-	public Cylinder(float radius, float height) {
+	public Cylinder(MessageBox messageBox, float radius, float height) {
+		
+		super(messageBox);
 		
 		if(radius >= 0) {
 			this.radius = radius;
@@ -77,15 +75,14 @@ public class Cylinder extends Shape {
 	public float volume() {
 		return (float) (Math.PI * Math.pow(radius, 2) * height);
 	}
-	
-	@Override
-	//Displays cylinder stats including surface area and volume in message panel
-	public void render() {
-		JOptionPane renderMessage = new JOptionPane();
-		
-		JOptionPane.showMessageDialog(renderMessage, "Cylinder Dimensions: \n Radius: " + radius + "\n Height: " + height +
-				"\n Surface Area: " + surfaceArea() + "\n Volume: " + volume());
 
+	// Renders dimensions via the MessageBox class in the Super Constructor
+	@Override
+	public void render() {
+
+		super.getMessageBox().show("Cylinder Dimensions: \n Radius: " + radius + "\n Height: " + height +	"\n Surface Area: " + surfaceArea() + "\n Volume: " + volume(), "Cylinder Dimensions");
+		
 	}
+	
 
 }

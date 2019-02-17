@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  * @author Conor
  *
  */
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements Renderer {
 	// Cuboid's width
 	private float width;
 	// Cuboid's height
@@ -18,15 +18,10 @@ public class Cuboid extends Shape {
 	// Cuboid's depth
 	private float depth;
 	
-	//Default constructor setting all values to 0
-	public Cuboid() {
-		this.width = 0;
-		this.height = 0;
-		this.depth = 0;
-	}
-	
 	//Constructor that sets dimensions to passed in value >= 0
-	public Cuboid(float width, float height, float depth) {
+	public Cuboid(MessageBox messageBox, float width, float height, float depth) {
+		
+		super(messageBox);
 		
 		if(width >= 0) {
 			this.width = width;
@@ -100,14 +95,13 @@ public class Cuboid extends Shape {
 	public float volume() {
 		return width * height * depth;
 	}
-	
+
+	// Renders dimensions via the MessageBox class in the Super Constructor
 	@Override
-	//Displays cuboid stats including surface area and volume in message panel
 	public void render() {
-		JOptionPane renderMessage = new JOptionPane();
+		super.getMessageBox().show("Cuboid Dimensions: \n Width: " + width + "\n Height: " + height + "\n Depth: " + depth + "\n Surface Area: " + surfaceArea() + "\n Volume: " + volume(), "Cuboid Dimensions" );
 		
-		JOptionPane.showMessageDialog(renderMessage, "Cuboid Dimensions: \n Width: " + width + "\n Height: " + height + "\n Depth: " + depth +
-				"\n Surface Area: " + surfaceArea() + "\n Volume: " + volume());
 	}
+
 
 }
