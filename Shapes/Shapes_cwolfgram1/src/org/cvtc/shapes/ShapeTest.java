@@ -4,19 +4,22 @@ public class ShapeTest {
 
 	public static void main(String[] args) {
 		
-		// New MessageBox for all constructors to use
+		//Message box to be passed in as dialog parameter
 		MessageBox messageBox = new MessageBox();
 		
+		// New Factory to make shapes
+		ShapeFactory newFactory = new ShapeFactory(messageBox);
+		
 		// Create new cuboid and render it
-		Cuboid cuboid = new Cuboid(messageBox, 2.0f, 3.0f, 4.0f);
+		Shape cuboid = newFactory.make(ShapeType.Cuboid);
 		cuboid.render();
 		
 		// Create new cylinder and render it
-		Cylinder cylinder = new Cylinder(messageBox, 2.0f, 3.0f);
+		Shape cylinder = newFactory.make(ShapeType.Cylinder);
 		cylinder.render();
 		
 		// Create new sphere and render it
-		Sphere sphere = new Sphere(messageBox, 2.0f);
+		Shape sphere = newFactory.make(ShapeType.Sphere);
 		sphere.render();
 
 	}

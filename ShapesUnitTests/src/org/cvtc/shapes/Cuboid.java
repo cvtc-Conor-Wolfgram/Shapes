@@ -1,6 +1,5 @@
 package org.cvtc.shapes;
 
-import javax.swing.JOptionPane;
 
 /**
  * 
@@ -10,7 +9,7 @@ import javax.swing.JOptionPane;
  * @author Conor
  *
  */
-public class Cuboid extends Shape implements Renderer {
+public class Cuboid extends Shape {
 	// Cuboid's width
 	private float width;
 	// Cuboid's height
@@ -19,7 +18,7 @@ public class Cuboid extends Shape implements Renderer {
 	private float depth;
 	
 	//Constructor that sets dimensions to passed in value >= 0
-	public Cuboid(MessageBox messageBox, float width, float height, float depth) {
+	public Cuboid(Dialog messageBox, float width, float height, float depth) {
 		
 		super(messageBox);
 		

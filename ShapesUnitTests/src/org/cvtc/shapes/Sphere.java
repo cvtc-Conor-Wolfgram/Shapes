@@ -9,14 +9,14 @@ import javax.swing.JOptionPane;
  * @author Conor
  *
  */
-public class Sphere extends Shape implements Renderer {
+public class Sphere extends Shape {
 	
 	//Sphere's radius
 	private float radius;
 	
 	
 	//Constructor setting radius >= 0 to passed in value
-	public Sphere(MessageBox messageBox, float radius) {
+	public Sphere(Dialog messageBox, float radius) {
 		
 		super(messageBox);
 		

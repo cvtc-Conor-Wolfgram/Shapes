@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @author Conor
  *
  */
-public class Cylinder extends Shape implements Renderer {
+public class Cylinder extends Shape {
 	//Cylinder radius
 	private float radius;
 	//Cylinder height
@@ -18,7 +18,7 @@ public class Cylinder extends Shape implements Renderer {
 
 	
 	//Constructor setting variables to passed in values above 0
-	public Cylinder(MessageBox messageBox, float radius, float height) {
+	public Cylinder(Dialog messageBox, float radius, float height) {
 		
 		super(messageBox);
 		

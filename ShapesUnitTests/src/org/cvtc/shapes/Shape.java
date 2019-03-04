@@ -7,13 +7,18 @@ package org.cvtc.shapes;
  * @author Conor
  *
  */
-public abstract class Shape {
+public abstract class Shape implements Renderer{
+	
+	@Override 
+    public boolean equals(Object o) {
+        return true;
+    }
 	
 	//Create variable for new MessageBox
-	private MessageBox messageBox;
+	private Dialog messageBox;
 	
 	// Get the messageBox
-	protected MessageBox getMessageBox(){
+	protected Dialog getMessageBox(){
 		
 		return messageBox;
 	}
@@ -24,11 +29,12 @@ public abstract class Shape {
 	}
 	
 	// Super Constructor that accepts a MessageBox
-	public Shape(MessageBox messageBox) {
+	public Shape(Dialog messageBox) {
 		this.messageBox = messageBox;
 	}
 	
 	//Abstract methods for surface area and volume	
 	public abstract float surfaceArea();
 	public abstract float volume();
+	public abstract void render();
 }
